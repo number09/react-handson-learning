@@ -22,12 +22,21 @@
             "1 teaspoon kosher salt",
             "4 cloved of chopped garlic"
         ]
-        const item = React.createElement(
-            "ul",
-            { className: "ingredients"},
-            items.map((ingredient, i) => React.createElement("li", {key: i}, ingredient))
-        )
-        ReactDOM.render(item, document.getElementById("root"))
+        function IngredientsList({items}) {
+            return React.createElement(
+                "ul",
+                {className: "ingredients"},
+                items.map((ingredient, i) => React.createElement( "li", {key: i }, ingredient))
+            )
+        }
+        // ReactDOM.render(
+        //     IngredientsList(),
+        //     document.getElementById("root")
+        // )
+        ReactDOM.render(
+            React.createElement(IngredientsList, { items }, null),
+            document.getElementById("root")
+        );
     </script>
 </body>
 </html>

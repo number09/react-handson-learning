@@ -14,9 +14,20 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
     </script>
     <script>
-        const dish = React.createElement("h1", null, "Baked Salmon")
-        const dessert = React.createElement("h2", null, "Coconut Cream Pie")
-        ReactDOM.render([dish, dessert], document.getElementById("root"))
+        const items = [
+            "2 lb salmon",
+            "5 sprigs fresh rosemary",
+            "2 tablespoons olive oil",
+            "2 small lemons",
+            "1 teaspoon kosher salt",
+            "4 cloved of chopped garlic"
+        ]
+        const item = React.createElement(
+            "ul",
+            { className: "ingredients"},
+            items.map((ingredient, i) => React.createElement("li", {key: i}, ingredient))
+        )
+        ReactDOM.render(item, document.getElementById("root"))
     </script>
 </body>
 </html>
